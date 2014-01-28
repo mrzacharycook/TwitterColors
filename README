@@ -1,0 +1,25 @@
+REQUIRES Adafruit_NeoPixel library for Arduino
+REQUIRES serialport Ruby gem
+
+USES 1x8 board from RGB-123
+USES RaspberryPi
+USES Alamode from Wyolum
+USES Ruby 1.9.3
+
+The purpose of this project is to light LEDs based on input from Twitter.
+
+This project is not complete, and only includes the code to update the LEDs via
+ a Ruby script, and the Arduino sketch to accept input from the Ruby script.
+
+To start your blinking:
+    Follow the Getting Started instructions for your Alamode
+    Upload the ArduinoColorSetter.ino to your Alamode, changing Pin Number
+     and NUM_LEDS as appropriate.  I'm using D7 (pin 7) on my Alamode.
+    Install Ruby 1.9.3 on your RaspberryPi
+    Run pixel_setter.rb to watch a Merge Sort.
+
+
+BUG:  The last pixel seems to be delayed in the initial and final updates.
+
+THANKS:
+    tigoe for the incredibly understandable serial transfer method
