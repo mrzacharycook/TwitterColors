@@ -1,0 +1,2 @@
+class PixelController
+end

@@ -1,0 +1,2 @@
+class ColorGetter
+end
