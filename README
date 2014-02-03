@@ -1,5 +1,9 @@
 REQUIRES Adafruit_NeoPixel library for Arduino
 REQUIRES serialport Ruby gem
+REQUIRES json Ruby gem
+REQUIRES color Ruby gem
+REQUIRES redis Ruby gem
+REQUIRES twitter Ruby gem
 
 USES 1x8 board from RGB-123
 USES RaspberryPi
@@ -8,18 +12,23 @@ USES Ruby 1.9.3
 
 The purpose of this project is to light LEDs based on input from Twitter.
 
-This project is not complete, and only includes the code to update the LEDs via
- a Ruby script, and the Arduino sketch to accept input from the Ruby script.
-
 To start your blinking:
-    Follow the Getting Started instructions for your Alamode
-    Upload the ArduinoColorSetter.ino to your Alamode, changing Pin Number
+    1. Follow the Getting Started instructions for your Alamode
+    2. Upload the ArduinoColorSetter.ino to your Alamode, changing Pin Number
      and NUM_LEDS as appropriate.  I'm using D7 (pin 7) on my Alamode.
-    Install Ruby 1.9.3 on your RaspberryPi
-    Run pixel_setter.rb to watch a Merge Sort.
-
-
-BUG:  The last pixel seems to be delayed in the initial and final updates.
+    3. Install Ruby 1.9.3 on your RaspberryPi and the gems above REQUIRES
+    4. Get your Twitter Developer tokens from
+     https://dev.twitter.com/docs/auth/tokens-devtwittercom
+    5. You'll need to create a JSON file called "twitter_config.json" in
+     your lib folder with the following text, filling in the double
+     quotes with your keys generated via the twitter link above:
+            {
+                "consumer_key":"",
+                "consumer_secret":"",
+                "access_token":"",
+                "access_token_secret":""
+            }
+    6. Run pixel_controller.rb to see tweets flowing to your pixels!
 
 THANKS:
     tigoe for the incredibly understandable serial transfer method
