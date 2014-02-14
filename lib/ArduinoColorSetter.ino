@@ -49,10 +49,10 @@ void loop() {
   if (Serial.available() > 0) {
     // If we see a feed from the Serial starting with C, begin parsing out integers for the values below
     if (Serial.read() == 'C') {    // string should start with C
-      pixel = Serial.parseInt();   // then an ASCII number for pixel number
-      red = Serial.parseInt();     // then an ASCII number for red
-      green = Serial.parseInt();   // then an ASCII number for green
-      blue = Serial.parseInt();    // then an ASCII number for blue
+      pixel = Serial.parseFloat();   // then an ASCII number for pixel number
+      red = Serial.parseFloat();     // then an ASCII number for red
+      green = Serial.parseFloat();   // then an ASCII number for green
+      blue = Serial.parseFloat();    // then an ASCII number for blue
     }
   }
 
